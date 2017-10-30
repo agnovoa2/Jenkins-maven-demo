@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building'
+        bat 'mvn compile'
       }
     }
     stage('Test') {
       steps {
-        echo 'Testing'
+        bat 'mvn install'
       }
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying'
+        bat 'mvn spring-boot:run'
       }
     }
   }
